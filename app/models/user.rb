@@ -3,9 +3,10 @@ class User < ApplicationRecord
     has_many :events, through: :event_users
     has_many :hotel_users
     has_many :hotels, through: :hotel_users
+    has_secure_password
 
     def display_name
-        "#{self.first_name}, #{self.last_name}"
+        "#{self.last_name}, #{self.first_name}"
     end
 
     def length_of_stay_by_hotel(hotel_id)

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  root 'sessions#home'
   resources :users
   resources :hotels
   resources :locations
