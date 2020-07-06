@@ -1,0 +1,17 @@
+<h1>User Show Page</h1>
+
+<div>Name: <%= @user.display_name %></div><br>
+<div>Budget: <%= "$#{@user.budget}" %></div><br>
+<div>Events list for this user:</div>
+<ul>
+    <% @user.events.each do |event| %>
+        <li><%= event.name %></li><br>
+    <% end %>
+</ul>
+<div>Hotels list for this user:</div>
+<ul>
+    <% @user.hotels.each do |hotel| %>
+        <li>Name: <%= hotel.name %></li>
+        <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> days</li><br>
+    <% end %>
+</ul>

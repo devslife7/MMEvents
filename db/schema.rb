@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_155354) do
+ActiveRecord::Schema.define(version: 2020_07_06_181840) do
+
+  create_table "event_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "name"
@@ -18,6 +25,14 @@ ActiveRecord::Schema.define(version: 2020_07_06_155354) do
     t.string "type_of_event"
     t.integer "ticket_cost"
     t.datetime "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "hotel_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hotel_id"
+    t.integer "length_of_stay"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,6 +47,14 @@ ActiveRecord::Schema.define(version: 2020_07_06_155354) do
 
   create_table "locations", force: :cascade do |t|
     t.string "city"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
