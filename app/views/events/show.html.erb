@@ -1,0 +1,13 @@
+<h1>Event Show Page</h1>
+
+<div>Name: <%= @event.name %></div><br>
+<div>Type of Event: <%= @event.type_of_event %></div><br>
+<div>Ticket Cost: <%= "$#{@event.ticket_cost}" %></div><br>
+<div>Date: <%= @event.date %></div><br>
+<div>Location: <%= @event.location.city %></div><br>
+<div>Hotels Avaliable in <%= @event.location.city %></div>
+<ul>
+    <% @event.location.hotels.each do |hotel| %>
+        <li><%= hotel.name %>
+    <% end %>
+</ul>

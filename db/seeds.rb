@@ -5,3 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Event.destroy_all
+Hotel.destroy_all
+Location.destroy_all
+
+
+10.times do 
+    Location.create(city: Faker::Address.unique.city)
+end
+
+10.times do
+    Hotel.create(name: "#{Faker::NatoPhoneticAlphabet.unique.code_word} Hotel", room_rate: rand(80..200), location_id: Location.all.sample.id)
+end
+
+10.times do
+    Event.create(name: "#{Faker::Game.title} Event", location_id: Location.all.sample.id, type_of_event: "#{Faker::Game.platform} Type",
+    ticket_cost: rand(40..200), date: Faker::Date.between(from: "2018-01-01", to: "2020-06-01"))
+end
