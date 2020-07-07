@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
         @user = User.new
     end
 
-    def create
+    def process_login
+        #refactor with form_tag syntax
         @user = User.find_by(username: params[:user][:username])
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id

@@ -8,6 +8,8 @@ class EventsController < ApplicationController
     end
 
     def book_event
-        @user_event = UserEvent.new
+        EventUser.create(user_id: 1, event_id: params[:id])
+        redirect_to user_path(1)
+        #refactor user_id once login is fixed
     end
 end

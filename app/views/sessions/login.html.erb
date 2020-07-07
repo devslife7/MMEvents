@@ -8,14 +8,11 @@
     <% end %>
 </ul>
 
-<%= form_for @user, url: sessions_create_path, method: :post do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %><br>
+<%= form_tag sessions_login_path, method: :post do %>
+    <%= label :username, "Username" %>
+    <%= text_field :username, "Username" %>
+    <%= label :password, "Password" %>
+    <%= password_field :password, "Password" %>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation%><br>
-
-    <%= f.submit %>
+    <%= submit_tag %>
 <% end %>

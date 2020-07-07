@@ -11,3 +11,6 @@
         <li><%= hotel.name %>
     <% end %>
 </ul>
+
+<div>
+<%= link_to "Register for This Event", book_event_path(@event.id), method: :post %>

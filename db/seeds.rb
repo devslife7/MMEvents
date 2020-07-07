@@ -28,7 +28,7 @@ end
 end
 
 10.times do
-    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, budget: rand(1000..1500), username: Faker::Esport.unique.player, password_digest: Faker::Hipster.word)
+    User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Esport.unique.player, password_digest: Faker::Hipster.word)
 end
 
 50.times do 
