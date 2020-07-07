@@ -1,12 +1,12 @@
 <h1>User Show Page</h1>
 
 <div>Name: <%= @user.display_name %></div><br>
-<div>Budget: <%= "$#{@user.budget}" %></div><br>
 <div>Events list for this user:</div>
 <ul>
     <% @user.events.each do |event| %>
         <li><%= event.name %></li><br>
     <% end %>
+    <div><%= link_to "Show All Events", events_path %> </div>
 </ul>
 <div>Hotels list for this user:</div>
 <ul>

@@ -1,0 +1,11 @@
+- Prevent navigation to site without logging in
+- Navigation Bar
+    - Login/Logout
+    - All Events
+- Carousel of Featured Events on Homepage
+
+- Build Out Hotels Models and Relationships
+
+- "About Us" page
+- "How It Works" page
+    "Show up at your hotel with tickets delivered to your room, etc"
