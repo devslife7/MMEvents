@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    # before_action :authorized, except: [:index, :show]
+
     def home
         @events = Event.all
     end
@@ -24,7 +26,6 @@ class SessionsController < ApplicationController
     end
 
     def logout
-        # byebug
         session[:user_id] = nil
         redirect_to sessions_login_path
     end

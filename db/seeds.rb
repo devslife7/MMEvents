@@ -18,8 +18,8 @@ Hotel.destroy_all
     Location.create(city: Faker::Address.unique.city)
 end
 
-10.times do
-    Hotel.create(name: "#{Faker::NatoPhoneticAlphabet.unique.code_word} Hotel", room_rate: rand(80..200), location_id: Location.all.sample.id)
+100.times do
+    Hotel.create(name: "#{Faker::NatoPhoneticAlphabet.code_word} Hotel", room_rate: rand(80..200), location_id: Location.all.sample.id)
 end
 
 10.times do

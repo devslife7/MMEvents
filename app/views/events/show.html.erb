@@ -1,24 +1,15 @@
-<h1>Event Show Page</h1>
-
-<div>Name: <%= @event.name %></div><br>
+<h2><%= @event.name %></h2>
 <div>Type of Event: <%= @event.type_of_event %></div><br>
 <div>Ticket Cost: <%= "$#{@event.ticket_cost}" %></div><br>
 <div>Date: <%= @event.date %></div><br>
 <div>Location: <%= @event.location.city %></div><br>
 
-<h4>To Register, select your hotel below: </h4><br>
+<h4>To Register, select your hotel below: </h4>
 <div>Hotels in <%= @event.location.city %></div>
 
-
-
-<% form_tag book_event_path>
-
-
-
-    <% @event.location.hotels.each do |hotel| %>
-        <li><%= hotel.name %>- per night:<%= hotel.room_rate %></li>
-    <% end %>
-</ul>
-
-<div>
-<%# <%= link_to "Register for This Event", book_event_path(@event.id), method: :post %> %>
+<%= form_tag book_event_path(@event.id) do %>
+    <%= collection_select :hotel, :id, @event.location.hotels, :id, :name %><br><br>
+    <%= label_tag 'Length of stay in days:' %><br>
+    <%= number_field_tag :length_of_stay %><br><br>
+    <%= submit_tag "Book Event" %>
+<% end %>
