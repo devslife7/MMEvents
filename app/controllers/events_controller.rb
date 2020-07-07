@@ -9,6 +9,8 @@ class EventsController < ApplicationController
 
     def book_event
         EventUser.create(user_id: session[:user_id], event_id: params[:id])
-        redirect_to user_path(session[:user_id])
+        redirect_to hotels_path
+        # need to narrow hotels by city
+        # redirect_to user_path(session[:user_id])
     end
 end

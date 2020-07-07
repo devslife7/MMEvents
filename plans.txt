@@ -1,3 +1,4 @@
+Goals
 - Prevent navigation to site without logging in
 - Navigation Bar
     - Login/Logout
@@ -9,3 +10,8 @@
 - "About Us" page
 - "How It Works" page
     "Show up at your hotel with tickets delivered to your room, etc"
+
+Questions we still have
+- Methods in the models (20x)
+    - what can be moved over
+- Analytics Page?

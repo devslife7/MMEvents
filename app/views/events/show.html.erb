@@ -5,12 +5,20 @@
 <div>Ticket Cost: <%= "$#{@event.ticket_cost}" %></div><br>
 <div>Date: <%= @event.date %></div><br>
 <div>Location: <%= @event.location.city %></div><br>
-<div>Hotels Avaliable in <%= @event.location.city %></div>
-<ul>
+
+<h4>To Register, select your hotel below: </h4><br>
+<div>Hotels in <%= @event.location.city %></div>
+
+
+
+<% form_tag book_event_path>
+
+
+
     <% @event.location.hotels.each do |hotel| %>
-        <li><%= hotel.name %>
+        <li><%= hotel.name %>- per night:<%= hotel.room_rate %></li>
     <% end %>
 </ul>
 
 <div>
-<%= link_to "Register for This Event", book_event_path(@event.id), method: :post %>
+<%# <%= link_to "Register for This Event", book_event_path(@event.id), method: :post %> %>
