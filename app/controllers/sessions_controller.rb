@@ -8,13 +8,24 @@ class SessionsController < ApplicationController
     end
 
     def process_login
-        #refactor with form_tag syntax
-        @user = User.find_by(username: params[:user][:username])
-        if @user && @user.authenticate(params[:user][:password])
-            session[:user_id] = @user.id
-            redirect_to user_path(@user.id)
+        user = User.find_by(username: params[:username])
+
+        if user && user.authenticate(params[:password])
+            session[:user_id] = user.id
+            redirect_to user_path(user.id)
         else
+            if params[:username] == "" || params[:password] == ""
+                flash.now[:error] = "Text fields cannot be empty"
+            else
+                flash.now[:error] = "The username or password is incorrect"
+            end
             render :login
         end
+    end
+
+    def logout
+        # byebug
+        session[:user_id] = nil
+        redirect_to sessions_login_path
     end
 end
