@@ -5,6 +5,12 @@ class User < ApplicationRecord
     has_many :hotels, through: :hotel_users
     has_secure_password
 
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :username, presence: true, uniqueness: {case_sensitive: false}
+    validates :password, presence: true
+    validates :password_confirmation, presence: true
+
     def display_name
         "#{self.last_name}, #{self.first_name}"
     end

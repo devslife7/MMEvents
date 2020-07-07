@@ -15,3 +15,5 @@
         <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> days</li><br>
     <% end %>
 </ul>
+
+<%= button_to "Attend new event", events_path, method: :get %>

@@ -1,4 +1,4 @@
-<h1>Register page</h1>
+<h1> Log In Page </h1>
 
 <ul>
     <% if @user.errors.any? %>
@@ -8,13 +8,7 @@
     <% end %>
 </ul>
 
-<%= form_for @user do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-
+<%= form_for @user, url: sessions_create_path, method: :post do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %><br>
 
@@ -25,5 +19,3 @@
 
     <%= f.submit %>
 <% end %>
-
-
