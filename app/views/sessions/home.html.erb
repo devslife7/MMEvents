@@ -4,23 +4,32 @@
     <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
     <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
   </ol>
-  <div class="container carousel-inner">
+  <div class="carousel-inner">
     <div class="carousel-item active">
+    <%coachella_id = Event.all.find_by(name: "Coachella").id%>
+    <a href="/events/<%=coachella_id%>">
       <img src=<%= image_path("Coachella.jpg") %> class="d-block w-100" alt="...">
+      </a>
       <div class="carousel-caption d-none d-md-block">
         <h5>Coachella 2021</h5>
         <p>Indio, California - April 10, 2021</p>
       </div>
     </div>
     <div class="carousel-item">
+    <%e3_id = Event.all.find_by(name: "Electronics Entertainment Expo").id%>
+    <a href="/events/<%=e3_id%>">
       <img src=<%= image_path("E3.jpg") %> class="d-block w-100" alt="...">
+      </a>
       <div class="carousel-caption d-none d-md-block">
         <h5>E3 2021</h5>
         <p>Los Angeles, California - June 25, 2021</p>
       </div>
     </div>
     <div class="carousel-item">
+    <%all_star_id = Event.all.find_by(name:"MLB All-Star Game").id%>
+    <a href="/events/<%=all_star_id%>">
       <img src=<%= image_path("all_star_game.jpg") %> class="d-block w-100" alt="...">
+      </a>
       <div class="carousel-caption d-none d-md-block">
         <h5>MLB All-Star Game </h5>
         <p>Atlanta, Georgia - July 13, 2021</p>
