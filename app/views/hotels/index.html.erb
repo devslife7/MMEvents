@@ -1,10 +1,8 @@
-<h1>Hotel list</h1>
-
- 
-
-<ul>
-    <% @hotels.each do |hotel| %>
-        <li><%= link_to hotel.name, hotel_path(hotel.id) %></li><br>
-    <% end %>
-
-</ul>
+<div id="hotel-index" class="container">
+    <h1 class="title is-4">Hotel List:</h1>
+    <ul>
+        <% @hotels.each do |hotel| %>
+            <li><%= link_to hotel.name, hotel_path(hotel.id) %></li><br>
+        <% end %>
+    </ul>
+</div>

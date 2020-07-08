@@ -1,15 +1,18 @@
-<h2><%= @event.name %></h2>
-<div>Type of Event: <%= @event.type_of_event %></div><br>
-<div>Ticket Cost: <%= "$#{@event.ticket_cost}" %></div><br>
-<div>Date: <%= @event.date %></div><br>
-<div>Location: <%= @event.location.city %></div><br>
+<div id="event-show" class=" container notification">
+    <div class="title"><%= @event.name %></div>
+    <div><strong>Ticket Cost:</strong> <%= "$#{@event.ticket_cost}" %></div><br>
+    <div><strong>Location:</strong> <%= @event.location.city %></div><br>
+    <div><strong>Type of Event:</strong> <%= @event.type_of_event %></div><br>
+    <div><strong>Event Date:</strong> <%= @event.date %></div><br>
 
-<h4>To Register, select your hotel below: </h4>
-<div>Hotels in <%= @event.location.city %></div>
-
-<%= form_tag book_event_path(@event.id) do %>
-    <%= collection_select :hotel, :id, @event.location.hotels, :id, :name %><br><br>
-    <%= label_tag 'Length of stay in days:' %><br>
-    <%= number_field_tag :length_of_stay %><br><br>
-    <%= submit_tag "Book Event" %>
-<% end %>
+    <%= form_tag book_event_path(@event.id) do %>
+        <strong><%= label_tag "Hotels Avaliable near this Event:" %></strong>
+        <div class="select">
+        <%= collection_select :hotel, :id, @event.location.hotels, :id, :name %><br><br>
+        </div><br>
+        <strong><%= label_tag "Stay in days:" %></strong>
+        <%= number_field_tag :length_of_stay, "", class: 'is-success',placeholder: "1,2,3,4"%> days<br><br>
+        <%= submit_tag "Book Event", class: "button is-success"%>
+    <% end %>
+    </div>
+</div>

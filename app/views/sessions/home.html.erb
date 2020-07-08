@@ -1,12 +1,7 @@
-<h1>Home Page</h1>
-
-<h1>Event list</h1>
-
+<div id="events" class="container">
 <ul>
     <% @events.each do |event| %>
-        <li><%= link_to event.name, event_path(event.id) %></li><br>
+        <div class="tile"><%= link_to event.name, event_path(event.id) %></div><br>
     <% end %>
 </ul>
-
-<%= button_to "Log In", sessions_login_path, method: :get %>
-<%= button_to "Register", new_user_path, method: :get%>
+</div>

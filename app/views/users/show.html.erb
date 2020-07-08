@@ -1,20 +1,20 @@
-<h1>User Show Page</h1>
+<div id="profile" class="container">
 
-<div>Name: <%= @user.display_name %></div><br>
-<div>Events list for this user:</div>
-<ul>
-    <% @user.events.each do |event| %>
-        <li><%= event.name %></li><br>
-    <% end %>
-    <div><%= link_to "Show All Events", events_path %> </div>
-</ul>
-<div>Hotels list for this user:</div>
-<ul>
-    <% @user.hotels.each do |hotel| %>
-        <li>Name: <%= hotel.name %></li>
-        <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> days</li><br>
-    <% end %>
-</ul>
+    <div class="title"><%= @user.display_name %></div>
+    <div><strong>Events history:</strong></div>
+    <ul>
+        <% @user.events.each do |event| %>
+            <li><%= event.name %></li><br>
+        <% end %>
+        <div><%= link_to "Show All Events", events_path %> </div>
+    </ul>
+    <div><strong>Hotels history:</strong></div>
+    <ul>
+        <% @user.hotels.each do |hotel| %>
+            <li>Name: <%= hotel.name %></li>
+            <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> days</li><br>
+        <% end %>
+    </ul>
 
-<%= button_to "Attend new event", events_path, method: :get %>
-<%= button_to "Log Out", sessions_logout_path, method: :post %>
+    <%= button_to "Attend new event", events_path, class: 'button is-info', method: :get %>
+</div>

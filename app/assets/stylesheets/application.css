@@ -17,3 +17,23 @@
  .login_error{
      color: red;
  }
+ .footer{
+    margin-top: 200px;
+ }
+ #register, #login{
+     margin-top: 100px;
+     width: 500px;
+ }
+ #navbar{
+     background-color: rgb(240, 240, 240);
+ }
+ #events, #profile, #location-index, #hotel-index, #event-show, #location-show, #hotel-show{
+     margin-top: 50px;
+ }
+ #about-page{
+    margin-top: 80px;
+    width: 900px;
+ }
+ #about-page img{
+     margin-bottom: 70px;
+}

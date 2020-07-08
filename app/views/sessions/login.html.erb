@@ -1,15 +1,15 @@
-<h1> Log In Page </h1>
+<div id="login" class="container notification">
+    <% if flash.now[:error] %>
+        <div class="login_error"><%= flash.now[:error] %></div><br>
+    <% end %>
 
-<% if flash.now[:error] %>
-    <div class="login_error"><%= flash.now[:error] %></div><br>
-<% end %>
 
+    <%= form_tag sessions_login_path, method: :post do %>
+        <%= label_tag :username%>
+        <%= text_field_tag :username, "", class: 'input is-rounded'%><br><br>
+        <%= label_tag :password %>
+        <%= password_field_tag :password , "", class: 'input is-rounded'%><br><br>
 
-<%= form_tag sessions_login_path, method: :post do %>
-    <%= label_tag :username%>
-    <%= text_field_tag :username%><br><br>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %><br><br>
-
-    <%= submit_tag "Log In"%>
-<% end %>
+        <%= submit_tag "Log In", class: "button is-primary"%>
+    <% end %>
+</div>

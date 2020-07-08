@@ -1,9 +1,10 @@
-<h1>Location Show Page</h1>
+<div id="location-show" class="container notification">
 
-<div>City: <%= @location.city %></div><br>
-<div> Hotels: </div>
-<ul>
-    <% @location.hotels.each do |hotel| %>
-        <li><%= link_to hotel.name, hotel_path(hotel.id) %></li>
-    <% end %>
-</ul>
+    <div class="title"> <%= @location.city %></div><br>
+    <div><strong>Hotels Available:</strong></div><br>
+    <ul>
+        <% @location.hotels.each do |hotel| %>
+            <li><%= link_to hotel.name, hotel_path(hotel.id) %></li><br>
+        <% end %>
+    </ul>
+</div>

@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%# <meta name="viewport" content="width=device-width, initial-scale=1"> %>
     <title>MMEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
   </head>
 
   <body>
+
+    <nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="https://pngimg.com/uploads/m_m/m_m_PNG47.png" width="60" height="50">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/locations">Location</a>
+          <a class="navbar-item" href="/hotels">Hotels</a>
+          <a class="navbar-item" href="/sessions/about">About</a>
+          <% if session[:user_id] != nil %>
+            <%= link_to "Profile", user_path(session[:user_id]), class: 'navbar-item' %>
+          <% end %>
+        </div>
+
+        <% if session[:user_id] == nil %>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-light" href="/users/register">
+                  Sign up
+                </a>
+                <a class="button is-primary" href="/sessions/login">
+                  <strong>Log in</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="buttons">
+                <a class="button is-success" href="/sessions/logout" data-method="post">
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        <% end %>
+
+      </div>
+    </nav>
+
     <%= yield %>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>M&MEvents</strong> by <a href="https://twitter.com">Marcos Velasco</a> & <a href="https://twitter.com">Mike Causey</a>. The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+      </div>
+</footer>
   </body>
 </html>

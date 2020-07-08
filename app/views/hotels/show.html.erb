@@ -1,5 +1,5 @@
-<h1>Hotels Show Page</h1>
-
-<div>Name: <%= @hotel.name %></div><br>
-<div>Room Rate: <%= "$#{@hotel.room_rate}" %></div><br>
-<div>Location: <%= @hotel.location.city %></div>
+<div id="hotel-show" class="container notification">
+    <div class="title"><%= @hotel.name %></div>
+    <div><strong>Room Rate:</strong> <%= "$#{@hotel.room_rate}" %></div><br>
+    <div><strong>Location:</strong> <%= @hotel.location.city %></div>
+</div>

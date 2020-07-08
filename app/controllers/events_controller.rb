@@ -8,7 +8,6 @@ class EventsController < ApplicationController
     end
 
     def book_event
-        # byebug
         EventUser.create(user_id: session[:user_id], event_id: params[:id])
         HotelUser.create(user_id: session[:user_id], hotel_id: params[:hotel][:id], length_of_stay: params[:length_of_stay] )
         # redirect_to hotels_path

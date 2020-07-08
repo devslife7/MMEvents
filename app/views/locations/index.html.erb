@@ -1,7 +1,9 @@
-<h1>Location list</h1>
+<div id="location-index" class="container">
+    <h1 class="title is-4">Location List:</h1>
 
-<ul>
-    <% @locations.each do |location| %>
-        <li><%= link_to location.city, location_path(location.id) %></li><br>
-    <% end %>
-</ul>
+    <ul>
+        <% @locations.each do |location| %>
+            <li><%= link_to location.city, location_path(location.id) %></li><br>
+        <% end %>
+    </ul>
+</div>

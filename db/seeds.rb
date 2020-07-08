@@ -15,7 +15,7 @@ Hotel.destroy_all
 
 
 10.times do 
-    Location.create(city: Faker::Address.unique.city)
+    Location.create(city: "#{Faker::Address.unique.city} city")
 end
 
 100.times do

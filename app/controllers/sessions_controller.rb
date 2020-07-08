@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
     def home
         @events = Event.all
     end
+    
+    def about
+    end
 
     def login
         @user = User.new
@@ -17,9 +20,9 @@ class SessionsController < ApplicationController
             redirect_to user_path(user.id)
         else
             if params[:username] == "" || params[:password] == ""
-                flash.now[:error] = "Text fields cannot be empty"
+                flash.now[:error] = "- Text fields cannot be empty"
             else
-                flash.now[:error] = "The username or password is incorrect"
+                flash.now[:error] = "- The username or password is incorrect"
             end
             render :login
         end
