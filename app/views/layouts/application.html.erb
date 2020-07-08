@@ -15,58 +15,6 @@
 
   <body>
 
-    <%# <nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-          <img src="https://pngimg.com/uploads/m_m/m_m_PNG47.png" width="60" height="50">
-        </a>
-
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/">Home</a>
-          <a class="navbar-item" href="/locations">Location</a>
-          <a class="navbar-item" href="/hotels">Hotels</a>
-          <a class="navbar-item" href="/sessions/about">About</a>
-          <% if session[:user_id] != nil %>
-            <%# <%= link_to "Profile", user_path(session[:user_id]), class: 'navbar-item' %>
-          <%# <% end %>
-        <%# </div> %> 
-
-        <%# <% if session[:user_id] == nil %>
-          <%# <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-light" href="/users/register">
-                  Sign up
-                </a>
-                <a class="button is-primary" href="/sessions/login">
-                  <strong>Log in</strong>
-                </a>
-              </div>
-            </div> %> 
-          <%# </div>
-        <% else %>
-          <%# <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="buttons">
-                <a class="button is-success" href="/sessions/logout" data-method="post">
-                  Sign Out %>
-                <%# </a>
-              </div>
-            </div>
-          </div>
-        <% end %> 
-
-      <%# </div> %> 
-    <%# </nav> %>
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="/">Navbar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +23,7 @@
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" href="/events">Events</a>
           <a class="nav-item nav-link" href="/locations">Locations</a>
           <a class="nav-item nav-link " href="/hotels" >Hotels</a>
           <a class="nav-item nav-link" href="/sessions/about" >About</a>
