@@ -7,7 +7,7 @@
 
     <%= form_tag book_event_path(@event.id) do %>
         <strong><%= label_tag "Hotels Avaliable near this Event:" %></strong>
-        <div class="select">
+        <div class="select is-success">
         <%= collection_select :hotel, :id, @event.location.hotels, :id, :name %><br><br>
         </div><br>
         <strong><%= label_tag "Stay in days:" %></strong>
