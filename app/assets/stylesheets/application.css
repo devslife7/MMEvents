@@ -75,3 +75,8 @@
 .card img {
     height: 250px;
 }
+#table1-id, #table2-id {
+    float: left;
+    margin-right: 40px;
+    /* font-size: large; */
+}

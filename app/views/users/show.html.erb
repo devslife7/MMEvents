@@ -17,15 +17,7 @@
     <%# </ul> %>
 
 
-    <table>
-            <tr>
-                <th> Hotels </th>
-            </tr>
-            <% @user.hotels.each do |hotel| %>
-            <tr>
-                <td><%= hotel.name %> </td>
-            <tr>
-            <% end %>
+    <table id="table1-id">
             <tr>
                 <th> Events </th>
             </tr>
@@ -35,9 +27,17 @@
             <tr>
             <% end %>
     </table>
-    <table>
+    <table id="table2-id">
+            <tr>
+                <th> Hotels </th>
+            </tr>
+            <% @user.hotels.each do |hotel| %>
+            <tr>
+                <td><%= hotel.name %> </td>
+            <tr>
+            <% end %>
     </table>
-    <table>
+    <table id=table3-id>
             <tr>
                 <th> Days </th>
             </tr>
