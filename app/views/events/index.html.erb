@@ -6,9 +6,11 @@
             <%# <li><%= link_to event.name, event_path(event.id) %>
 
             <div class="card" style="width: 18rem;">
-                <img id="event-img" src="https://simpleicon.com/wp-content/uploads/phone-2.png" class="card-img-top" alt="...">
+                <a href ="events/<%=event.id%>">
+                <img id="event-img" src=<%= image_path("book-today-disc.png")%> class="card-img-top" alt="...">
+                </a>
                 <div class="card-body">
-                    <p class="card-text"> <%= event.name %>.  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
                 </div>
             </div>
         <% end %>

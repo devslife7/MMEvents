@@ -1,11 +1,5 @@
 Goals for Thursday
 - Prevent navigation to site without logging in
-- Navigation Bar
-    - All Events
-- Home Carousel
-    - 4th event
-- Event Index page in title cards (bootstrap)
-- CSS cleanup of show and index pages
 - User Analytics (user show page)
 
 Goals for Friday
