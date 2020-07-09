@@ -1,20 +1,51 @@
 <div id="profile" class="container notification">
 
     <div class="title"><%= @user.display_name %></div>
-    <div><strong>Events history:</strong></div>
+    <%# <div><strong>Events history:</strong></div>
     <ul>
         <% @user.events.each do |event| %>
-            <li><%= event.name %></li><br>
-        <% end %>
-        <div><%= link_to "Show All Events", events_path %> </div>
-    </ul>
-    <div><strong>Hotels history:</strong></div>
-    <ul>
-        <% @user.hotels.each do |hotel| %>
-            <li>Name: <%= hotel.name %></li>
-            <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> days</li><br>
-        <% end %>
-    </ul>
+            <%# <li><%= event.name %>
+        <%# <% end %> 
+        <%# <div><%= link_to "Show All Events", events_path %>
+    <%# </ul> %>
+    <%# <div><strong>Hotels history:</strong></div> %>
+    <%# <ul> %>
+        <%# <% @user.hotels.each do |hotel| %>
+            <%# <li>Name: <%= hotel.name %>
+            <%# <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> 
+        <%# <% end %>
+    <%# </ul> %>
 
+
+    <table>
+            <tr>
+                <th> Hotels </th>
+            </tr>
+            <% @user.hotels.each do |hotel| %>
+            <tr>
+                <td><%= hotel.name %> </td>
+            <tr>
+            <% end %>
+            <tr>
+                <th> Events </th>
+            </tr>
+            <% @user.events.each do |event| %>
+            <tr>
+                <td><%= event.name %> </td>
+            <tr>
+            <% end %>
+    </table>
+    <table>
+    </table>
+    <table>
+            <tr>
+                <th> Days </th>
+            </tr>
+            <% @user.hotels.each do |hotel| %>
+            <tr>
+                <td><%= @user.length_of_stay_by_hotel(hotel.id) %> </td>
+            <tr>
+            <% end %>
+    </table><br>
     <%= button_to "Attend new event", events_path, class: 'button is-info', method: :get %>
 </div>
