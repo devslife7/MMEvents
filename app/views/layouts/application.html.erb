@@ -5,37 +5,39 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a class="navbar-brand" href="/">Navbar</a>
+      <a class="navbar-brand" href="/">
+        <img id="logo" src=<%= image_path("main_logo.png") %> class="" alt="...">
+      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <a class="nav-item nav-link" href="/events">Events</a>
+          <a class="nav-item nav-link bg-main" href="/events">Events</a>
           <a class="nav-item nav-link" href="/locations">Locations</a>
           <a class="nav-item nav-link " href="/hotels" >Hotels</a>
           <a class="nav-item nav-link" href="/sessions/about" >About</a>
         </div>
 
-        <div class="form-inline my-2 my-lg-0">
+        <div class="form-inline">
           <% if session[:user_id] == nil %>
-            <%= link_to "Register", users_register_path, class: "btn btn-warning my-2 my-sm-0", method: :get %>
-            <%= link_to "Log In", sessions_login_path, class: "btn btn-dark my-2 my-sm-0", method: :get %>
+            <%= link_to "Register", users_register_path, class: "btn btn-success btn-margin", method: :get %>
+            <%= link_to "Log In", sessions_login_path, class: "btn btn-light", method: :get %>
           <% else %>
-            <%= link_to "Hi, #{User.find(session[:user_id]).first_name}", user_path(session[:user_id]), class: 'btn nav-link', method: :get %>
-            <%= link_to "Log Out", sessions_logout_path, class: 'btn btn-warning my-2 my-sm-0', method: :post %>
+            <%= link_to "Hi, #{User.find(session[:user_id]).first_name}", user_path(session[:user_id]), id: 'profile-link', method: :get %>
+            <%= link_to "Log Out", sessions_logout_path, class: 'btn btn-success', method: :post %>
           <% end %>
         </div>
       </div>
@@ -43,14 +45,16 @@
 
     <%= yield %>
 
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <p>
-          <strong>M&MEvents</strong> by <a href="https://twitter.com">Marcos Velasco</a> & <a href="https://twitter.com">Mike Causey</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-        </p>
+    
+        
+    <footer class="footer card-footer">
+      <div class="container">
+        <strong>M&MEvents</strong> by <a href="https://twitter.com">Marcos Velasco</a> & <a href="https://twitter.com">Mike Causey</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
       </div>
     </footer>
+
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

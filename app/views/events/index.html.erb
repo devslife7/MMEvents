@@ -1,7 +1,16 @@
-<h1>Event list</h1>
+<div id="event-index" class="container">
+    <div class="title">Event list</div>
 
-<ul>
-    <% @events.each do |event| %>
-        <li><%= link_to event.name, event_path(event.id) %></li><br>
-    <% end %>
-</ul>
+    <ul>
+        <% @events.each do |event| %>
+            <%# <li><%= link_to event.name, event_path(event.id) %>
+
+            <div class="card" style="width: 18rem;">
+                <img id="event-img" src="https://simpleicon.com/wp-content/uploads/phone-2.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text"> <%= event.name %>.  Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        <% end %>
+    </ul>
+</div>
