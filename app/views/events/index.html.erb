@@ -7,7 +7,7 @@
 
             <div class="card" style="width: 18rem;">
                 <a href ="events/<%=event.id%>">
-                <img id="event-img" src=<%= image_path("book-today-disc.png")%> class="card-img-top" alt="...">
+                <img id="event-img" src=<%= image_path(event.img)%> class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
                     <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
