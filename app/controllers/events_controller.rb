@@ -2,7 +2,15 @@ class EventsController < ApplicationController
     before_action :authorized, except: [:index]
 
     def index
-        @events = Event.all
+        if params[:sort] == "date"
+            @events = Event.all.sort_by &:date
+        elsif params[:sort] == "price"
+            @events = Event.all.sort_by &:ticket_cost
+        elsif params[:sort] == "alphabet"
+            @events = Event.all.sort_by &:name
+        else
+            @events = Event.all
+        end
     end
 
     def show

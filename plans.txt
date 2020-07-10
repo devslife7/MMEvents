@@ -10,7 +10,7 @@ Goals for Thursday
 - add hotels as titles with one static image of random hotel
 - Improve Hotels index page (titles)
 - Add logos to sing in and register
-- Get rid time of the event
+- ## Get rid time of the event
 - Add number of visits to the user show page
 - progress column
 - Total budget on profile

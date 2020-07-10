@@ -4,8 +4,10 @@
     <div id="filter-form">
         <%= form_tag hotels_path, method: "GET" do %>
             <%= label_tag "Filter by location: " %>
+            <div class="select">
             <%= collection_select :location, :id, Location.all, :id, :city, prompt: "Select location", selected: @location %>
-            <%= submit_tag "Filter" , class: "button"%>
+            </div>
+            <%= submit_tag "Filter" , class: "button is-info"%>
         <% end %>
     </div>
         <%# <%= button_to "all hotels", hotels_path, method: :get, id: "filter-all", class: "button" %>
@@ -21,7 +23,8 @@
                     <img id="hotel-img" src=<%= image_path("book-today-disc.png") %> class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
-                    <strong><p class="card-text"> <%= hotel.name %> in <%= hotel.location.city %></p></strong>
+                    <strong><p class="card-text"> <%= hotel.name %></p></strong>
+                    <strong><p class="card-text"> <%= hotel.location.city %></p></strong>
                 </div>
             </div>
             

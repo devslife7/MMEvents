@@ -1,16 +1,25 @@
+<div id="home-title" class="display-3"> All Events </div>
 <div class="margin-top">
+
+    <div class="container event-sort-menu ">
+        <%= label_tag "Soring Menu:", "Sorting Menu: ", class: "display-4", id: "sort-label-events" %>
+        <%= button_to "Sort by Date", events_path, method: :get, class: "button is-info button-sort-menu", params: {sort: "date"} %>
+        <%= button_to "Sort by Ticket Cost", events_path, method: :get, class: "button is-info button-sort-menu", params: {sort: "price"} %>
+        <%= button_to "Sort in alphabetical order", events_path, method: :get, class: "button is-info button-sort-menu", params: {sort: "alphabet"} %>
+    </div>
 
     <div id="event-titles">
         <% @events.each do |event| %>
-            <div class="card">
-                <a href ="events/<%=event.id%>">
+            <a href ="events/<%=event.id%>">
+                <div class="card display-4">
                     <img id="event-img" src=<%= image_path(event.img)%> class="card-img-top" alt="...">
-                </a>
-                <div class="card-body">
-                    <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
-                    <p class="card-text"> Tickets: $<%= event.ticket_cost %> Date: <%= event.date.strftime('%m-%d-%Y') %></p>
+                    <div class="card-body card-text">
+                        <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
+                        <p class="card-text"> Tickets: $<%= event.ticket_cost %> </p>
+                        <p class="card-text"> Date: <%= event.date.strftime('%m-%d-%Y') %></p>
+                    </div>
                 </div>
-            </div>
+            </a>   
         <% end %>
     </div>
 </div>

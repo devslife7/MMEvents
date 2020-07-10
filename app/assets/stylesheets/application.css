@@ -97,12 +97,12 @@ body{
     margin-right: 40px;
 }
 /* removes link underlines on locations and hotels index pages */
-/* .notification a:not(.button):not(.dropdown-item) {
+.notification a:not(.button):not(.dropdown-item) {
     text-decoration: none;
-    margin: 10px;
-    padding: 12px 16px 12px 16px;
-    border-radius: 6px;
-} */
+    /* margin: 10px; */
+    /* padding: 12px 16px 12px 16px; */
+    /* border-radius: 6px; */ 
+}
 .notification a:not(.button):not(.dropdown-item):hover {
     color: white;
     background-color: #007bff;
@@ -149,4 +149,23 @@ body{
 }
 #filter-all {
     float: right;
+}
+.card-text {
+    text-align: center;
+    text-decoration: dashed;
+    font-size: 17px;
+    font-weight: 400;
+}
+.event-sort-menu {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#sort-label-events {
+    font-size: 28px;
+}
+.button-sort-menu {
+    margin-left: 25px;
 }
