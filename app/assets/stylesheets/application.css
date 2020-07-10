@@ -116,7 +116,8 @@ body{
     text-align: center;
 }
 #filter-form {
-    float: left;
+    margin-top: 100px;
+    float: right;
 }
 .hotels-container {
     /* background-color: red; */
@@ -128,17 +129,24 @@ body{
     justify-content: center;
     align-items: center;
 }
-.hotels-titles {
+.hotel-titles {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     /* margin: 0px; */
     /* padding: 0px; */
     /* background-color: red; */
 }
-.hotel-card {
-    margin: 20px;
-    width: 12rem; height: 320px
+#hotel-img {
+    height: 170px;
+}
+#hotel-card {
+    /* margin: 20px; */
+    width: 14rem; height: 250px
+    /* background: red; */
+}
+#filter-all {
+    float: right;
 }
