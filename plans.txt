@@ -1,14 +1,14 @@
 Goals for Thursday
+- Fix footer on event show page
 - Prevent navigation to site without logging in
 - Get rid time of the event
 - Remove underline on links for hotel and location index page links
 - Add sorting to hotle(location location-dropdown) index page and event intex page(upcoming date)
 - Add number of visits to the user show page
-- Fix footer on event show page
-- Total budget on profile
+- M&M Events big in the home page
 - progress column
+- Total budget on profile
 - User Analytics (user show page)
-M&M Events big in the home page
 
 Goals for Friday
 - Video presentation for Friday

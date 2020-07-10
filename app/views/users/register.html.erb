@@ -1,5 +1,5 @@
 <div id="register" class="container notification">
-    <ul class="login_error">
+    <ul class="error-color">
         <% if @user.errors.any? %>
             <% @user.errors.full_messages.each do |message| %>
                 <li>- <%= message %></li><br>

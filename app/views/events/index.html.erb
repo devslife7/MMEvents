@@ -1,9 +1,9 @@
-<div id="event-index" class="container">
+<div class="margin-top container">
     <div class="title">Event list</div>
 
-    <ul>
+    <div id="event-titles">
         <% @events.each do |event| %>
-            <div class="card" style="width: 18rem; height: 320px">
+            <div class="card">
                 <a href ="events/<%=event.id%>">
                     <img id="event-img" src=<%= image_path(event.img)%> class="card-img-top" alt="...">
                 </a>
@@ -12,5 +12,5 @@
                 </div>
             </div>
         <% end %>
-    </ul>
+    </div>
 </div>

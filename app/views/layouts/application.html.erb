@@ -33,7 +33,7 @@
 
         <div class="form-inline">
           <% if session[:user_id] == nil %>
-            <%= link_to "Register", users_register_path, class: "btn btn-success btn-margin", method: :get %>
+            <%= link_to "Register", users_register_path, id: "btn-register", class: "btn btn-success", method: :get %>
             <%= link_to "Log In", sessions_login_path, class: "btn btn-light", method: :get %>
           <% else %>
             <%= link_to "Hi, #{User.find(session[:user_id]).first_name}", user_path(session[:user_id]), id: 'profile-link', method: :get %>
@@ -45,16 +45,15 @@
 
     <%= yield %>
 
-    
-        
-    <footer class="footer card-footer">
-      <div class="container">
-        <strong>M&MEvents</strong> by <a href="https://twitter.com">Marcos Velasco</a> & <a href="https://twitter.com">Mike Causey</a>. The source code is licensed
-        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-      </div>
-    </footer>
-
-    
+    <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>M&MEvents</strong> by <a href="https://twitter.com">Marcos Velasco</a> & <a href="https://twitter.com">Mike Causey</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is approved by <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">M&M's candy</a>.
+    </p>
+  </div>
+</footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

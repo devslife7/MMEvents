@@ -1,22 +1,7 @@
-<div id="profile" class="container notification">
+<div class="container notification margin-top">
 
     <div class="title"><%= @user.display_name %></div>
-    <%# <div><strong>Events history:</strong></div>
-    <ul>
-        <% @user.events.each do |event| %>
-            <%# <li><%= event.name %>
-        <%# <% end %> 
-        <%# <div><%= link_to "Show All Events", events_path %>
-    <%# </ul> %>
-    <%# <div><strong>Hotels history:</strong></div> %>
-    <%# <ul> %>
-        <%# <% @user.hotels.each do |hotel| %>
-            <%# <li>Name: <%= hotel.name %>
-            <%# <li>length of stay: <%= @user.length_of_stay_by_hotel(hotel.id) %> 
-        <%# <% end %>
-    <%# </ul> %>
-
-
+  
     <table id="table1-id">
             <tr>
                 <th> Events </th>

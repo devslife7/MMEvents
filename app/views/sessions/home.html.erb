@@ -56,10 +56,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div id="events" class="container">
-<ul>
-    <% @events.each do |event| %>
-        <div class="tile"><%= link_to event.name, event_path(event.id) %></div><br>
-    <% end %>
-</ul>
-</div>
