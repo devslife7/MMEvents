@@ -19,7 +19,7 @@ body{
     min-height: 100vh;
 }
 .error-color{
-    color: red;
+    color: rgb(219, 59, 59);
 }
 .footer {
     width: 100%;
@@ -149,4 +149,10 @@ body{
 }
 #filter-all {
     float: right;
+}
+#no-events-message {
+    color: rgb(219, 59, 59);
+    font-weight: 500;
+    margin-bottom: 40px;
+    margin-top: 50px;
 }

@@ -1,38 +1,41 @@
 <div class="container notification margin-top">
 
     <div class="title"><%= @user.display_name %></div>
+    <div><strong>Username: <%= @user.username %></strong></div>
 
-    <p class="error-color"><%= @user.no_events %> </p>
-  
-    <table id="table1-id">
-            <tr>
-                <th> Events </th>
-            </tr>
-            <% @user.events.each do |event| %>
-            <tr>
-                <td><%= event.name %> </td>
-            <tr>
-            <% end %>
-    </table>
-    <table id="table2-id">
-            <tr>
-                <th> Hotels </th>
-            </tr>
-            <% @user.hotels.each do |hotel| %>
-            <tr>
-                <td><%= hotel.name %> </td>
-            <tr>
-            <% end %>
-    </table>
-    <table id=table3-id>
-            <tr>
-                <th> Days </th>
-            </tr>
-            <% @user.hotels.each do |hotel| %>
-            <tr>
-                <td><%= @user.length_of_stay_by_hotel(hotel.id) %> </td>
-            <tr>
-            <% end %>
-    </table><br>
+    <% if @user.events.empty? %>
+        <p id="no-events-message">No Events Yet! Click 'Attend New Event'</p>
+    <% else %>
+        <table id="table1-id">
+                <tr>
+                    <th> Events </th>
+                </tr>
+                <% @user.events.each do |event| %>
+                <tr>
+                    <td><%= event.name %> </td>
+                <tr>
+                <% end %>
+        </table>
+        <table id="table2-id">
+                <tr>
+                    <th> Hotels </th>
+                </tr>
+                <% @user.hotels.each do |hotel| %>
+                <tr>
+                    <td><%= hotel.name %> </td>
+                <tr>
+                <% end %>
+        </table>
+        <table id=table3-id>
+                <tr>
+                    <th> Days </th>
+                </tr>
+                <% @user.hotels.each do |hotel| %>
+                <tr>
+                    <td><%= @user.length_of_stay_by_hotel(hotel.id) %> </td>
+                <tr>
+                <% end %>
+        </table><br>
+    <% end %>
     <%= button_to "Attend new event", events_path, class: 'button is-info', method: :get %>
 </div>

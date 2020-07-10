@@ -21,9 +21,4 @@ class User < ApplicationRecord
             end
         end
     end
-
-    def no_events
-        self.events.nil?
-            return "No Events Yet! Click 'Attend New Event'"
-        end
 end
