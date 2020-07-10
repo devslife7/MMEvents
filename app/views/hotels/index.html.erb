@@ -5,15 +5,30 @@
         <%= form_tag hotels_path, method: "GET" do %>
             <%= label_tag "Filter by location: " %>
             <%= collection_select :location, :id, Location.all, :id, :city, prompt: "Select location", selected: @location %>
-            <%= submit_tag "Filter" %>
+            <%= submit_tag "Filter" , class: "button"%>
         <% end %>
     </div>
-    <%= button_to "all hotels", hotels_path, method: :get %>
+        <%# <%= button_to "all hotels", hotels_path, method: :get, id: "filter-all", class: "button" %>
+    
 
-
-    <ul class="hotels-container">
+    <div>
+    </div>
+    <div class="hotel-titles">
         <% @hotels.each do |hotel| %>
-            <li><%= link_to hotel.name, hotel_path(hotel.id), class: "no-text-decoration hotel-links" %><li><br>
+            <%# <li><%= link_to hotel.name, hotel_path(hotel.id), class: "no-text-decoration hotel-links" %>
+            <div id="hotel-card" class="card">
+                <a href ="hotels/<%=hotel.id%>">
+                    <img id="hotel-img" src=<%= image_path("book-today-disc.png") %> class="card-img-top" alt="...">
+                </a>
+                <div class="card-body">
+                    <strong><p class="card-text"> <%= hotel.name %> in <%= hotel.location.city %></p></strong>
+                </div>
+            </div>
+            
         <% end %>
-    </ul>
+
+        
+    </div>
+
+    
 </div>
