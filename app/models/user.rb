@@ -9,6 +9,7 @@ class User < ApplicationRecord
     validates :last_name, presence: true
     validates :username, presence: true, uniqueness: {case_sensitive: false}
 
+
     def display_name
         "#{self.last_name}, #{self.first_name}"
     end
@@ -20,4 +21,9 @@ class User < ApplicationRecord
             end
         end
     end
+
+    def no_events
+        self.events.nil?
+            return "No Events Yet! Click 'Attend New Event'"
+        end
 end
