@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+    before_action :authorized
+
     def index
         @events = Event.all
     end
@@ -9,7 +11,7 @@ class EventsController < ApplicationController
 
     def book_event
         EventUser.create(user_id: session[:user_id], event_id: params[:id])
-        HotelUser.create(user_id: session[:user_id], hotel_id: params[:hotel][:id], length_of_stay: params[:length_of_stay] )
+        HotelUser.create(user_id: session[:user_id], hotel_id: params[:hotel][:id], length_of_stay: params[:length_of_stay])
         redirect_to user_path(session[:user_id])
     end
 end

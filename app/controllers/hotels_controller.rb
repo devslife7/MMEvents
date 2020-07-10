@@ -1,6 +1,14 @@
 class HotelsController < ApplicationController
+    before_action :authorized, except: [:index]
+
     def index
-        @hotels = Hotel.all
+        if params[:location] != nil
+            @location = params[:location][:id]
+            @hotels = Location.find(params[:location][:id]).hotels
+        else
+            @location = ""
+            @hotels = Hotel.all
+        end
     end
 
     def show

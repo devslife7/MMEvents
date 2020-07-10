@@ -1,10 +1,15 @@
-<div id="login" class="container form-check">
+<div>
+    <% if flash.now[:access_denied] %>
+        <div class="title error-color custom-title"><%= flash.now[:access_denied] %></div><br>
+    <% end %>
+</div>
+<div id="login" class="container notification">
     <% if flash.now[:error] %>
         <div class="error-color"><%= flash.now[:error] %></div><br>
     <% end %>
 
 
-    <%= form_tag sessions_login_path, method: :post do %>
+    <%= form_tag login_path, method: :post do %>
         <%= label_tag :username %>
         <%= text_field_tag :username, "", class: 'input is-rounded'%><br><br>
         <%= label_tag :password %>

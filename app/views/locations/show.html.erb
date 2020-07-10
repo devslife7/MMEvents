@@ -1,7 +1,7 @@
 <div class="container notification margin-top">
 
     <div class="title"> <%= @location.city %></div><br>
-    <div><strong>Hotels Available:</strong></div><br>
+    <div><strong>Hotels Available in this location:</strong></div><br>
     <ul>
         <% @location.hotels.each do |hotel| %>
             <li><%= link_to hotel.name, hotel_path(hotel.id) %></li><br>

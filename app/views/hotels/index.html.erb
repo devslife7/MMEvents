@@ -1,8 +1,19 @@
+<div class="display-4 custom-title"> Hotels in association with M&MEvents </div>
 <div class="container notification margin-top">
-    <h1 class="title">Hotel List:</h1>
-    <ul>
+
+    <div id="filter-form">
+        <%= form_tag hotels_path, method: "GET" do %>
+            <%= label_tag "Filter by location: " %>
+            <%= collection_select :location, :id, Location.all, :id, :city, prompt: "Select location", selected: @location%>
+            <%= submit_tag "Filter" %>
+        <% end %>
+    </div>
+    <%= button_to "all hotels", hotels_path, method: :get %>
+
+
+    <ul class="hotels-container">
         <% @hotels.each do |hotel| %>
-            <li><%= link_to hotel.name, hotel_path(hotel.id) %></li><br>
+            <li><%= link_to hotel.name, hotel_path(hotel.id), class: "no-text-decoration hotel-links" %><li><br>
         <% end %>
     </ul>
 </div>
