@@ -35,7 +35,7 @@ Event.create(location_id: Location.find_by(city: "San Diego, CA").id, name: "Com
 Event.create(location_id: Location.find_by(city: "Nashville, TN").id, name: "CMA Fest", type_of_event: "Concert", ticket_cost: 180, date: Date.parse('2021-06-10'), img: "CMA_Fest_logo.png")
 Event.create(location_id: Location.find_by(city: "Indio, CA").id, name: "Coachella", type_of_event: "Concert", ticket_cost: 399, date: Date.parse('2021-04-10'), img: "Coachella_logo.jpeg")
 Event.create(location_id: Location.find_by(city: "Manchester, TN").id, name: "Bonnaroo", type_of_event: "Concert", ticket_cost: 319, date: Date.parse('2021-06-17'), img: "Bonnaroo_logo.jpg")
-Event.create(location_id: Location.find_by(city: "Washington, DC").id, name: "Awesome-Con", type_of_event: "Convention", ticket_cost: 80, date: Date.parse('2020-12-11'), img: "Awesome_Con_Logo.png")
+Event.create(location_id: Location.find_by(city: "Washington, DC").id, name: "Awesome-Con", type_of_event: "Convention", ticket_cost: 80, date: Date.parse('2021-12-11'), img: "Awesome_Con_Logo.png")
 Event.create(location_id: Location.find_by(city: "Chicago, IL").id, name: "Lollapalooza", type_of_event: "Concert", ticket_cost: 340, date: Date.parse('2021-07-30'), img: "Lollapolooza_logo.png")
 Event.create(location_id: Location.find_by(city: "Tampa, FL").id, name: "Super Bowl LV", type_of_event: "Sports", ticket_cost: 4000, date: Date.parse('2021-02-10'), img: "Super_Bowl_logo.jpeg")
 Event.create(location_id: Location.find_by(city: "Las Vegas, NV").id, name: "NFL Draft", type_of_event: "Sports", ticket_cost: 50, date: Date.parse('2021-04-29'), img: "NFL_Draft_logo.jpeg")
