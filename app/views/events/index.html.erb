@@ -8,7 +8,7 @@
                 </a>
                 <div class="card-body">
                     <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
-                    <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
+                    <p class="card-text"> Tickets: $<%= event.ticket_cost %> Date: <%= event.date.strftime('%m-%d-%Y') %></p>
                 </div>
             </div>
         <% end %>
