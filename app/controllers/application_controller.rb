@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
 
     def authorized
         unless session[:user_id]
-            flash[:access_denied] = "Access Denied!\nYou need to log in or register to have full access to the sites features."
+            flash[:access_denied] = "You need to log in or register to have full access to the sites features."
             redirect_to login_path
         end
         # redirect_to login_path unless session[:user_id]

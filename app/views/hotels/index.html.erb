@@ -4,7 +4,7 @@
     <div id="filter-form">
         <%= form_tag hotels_path, method: "GET" do %>
             <%= label_tag "Filter by location: " %>
-            <%= collection_select :location, :id, Location.all, :id, :city, prompt: "Select location", selected: @location%>
+            <%= collection_select :location, :id, Location.all, :id, :city, prompt: "Select location", selected: @location %>
             <%= submit_tag "Filter" %>
         <% end %>
     </div>

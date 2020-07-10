@@ -5,7 +5,8 @@ Goals for Thursday
 - ## Remove underline on links for hotel and location index page links
 - ## Add Error mesages when trying to access features when not logged in
 - ## Add titles to index pages
-- Add sorting to hotle(location location-dropdown) index page and event intex page(upcoming date)
+- ## cleaned up routes
+- ## Add sorting to hotle(location location-dropdown) index page and event intex page(upcoming date)
 - add hotels as titles with one static image of random hotel
 - Improve Hotels index page
 - Add logos to sing in and register

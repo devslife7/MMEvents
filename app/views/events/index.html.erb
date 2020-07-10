@@ -1,6 +1,4 @@
 <div class="margin-top">
-    <%# <div class="title">Event list</div> %>
-
 
     <div id="event-titles">
         <% @events.each do |event| %>
@@ -9,6 +7,7 @@
                     <img id="event-img" src=<%= image_path(event.img)%> class="card-img-top" alt="...">
                 </a>
                 <div class="card-body">
+                    <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
                     <p class="card-text"> <%= event.name %> in <%= event.location.city %></p>
                 </div>
             </div>
