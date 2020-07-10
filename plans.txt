@@ -26,3 +26,8 @@ Presentation Points
 -explain the featured events in homepage
 -no access if not signed in
 -regiter / login
+-new buttons in navbar
+-if no events exist no table is shown
+-show the add new event process
+-show the sorting in events
+-show the filtering in hotels
