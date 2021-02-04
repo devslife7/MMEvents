@@ -57,3 +57,5 @@ User.create(first_name: "Mike", last_name: "Causey", username: "Mike", password:
 # 50.times do
 #     HotelUser.create(user_id: User.all.sample.id, hotel_id: Hotel.all.sample.id, length_of_stay: rand(1..4))
 # end
+
+puts "Succesful seed!"
