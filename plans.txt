@@ -22,12 +22,14 @@ Goals for Friday
 
 Presentation Points
 
--go over all tabs and maybe footer
 -explain the featured events in homepage
+-all-events
+-show the sorting in events
 -no access if not signed in
--regiter / login
+-regiter / logout / login
+
+-the nav-bar changes
 -new buttons in navbar
 -if no events exist no table is shown
--show the add new event process
--show the sorting in events
 -show the filtering in hotels
+-show the add new event process
