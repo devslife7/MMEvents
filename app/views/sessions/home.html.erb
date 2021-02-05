@@ -1,0 +1,65 @@
+<div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%coachella_id = Event.all.find_by(name: "Coachella").id%>
+    <a href="/events/<%=coachella_id%>">
+      <img src=<%= image_path("Coachella.jpg") %> class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Coachella 2021</h5>
+        <p>Indio, California - April 10, 2021</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <%e3_id = Event.all.find_by(name: "Electronics Entertainment Expo").id%>
+    <a href="/events/<%=e3_id%>">
+      <img src=<%= image_path("E3.jpg") %> class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>E3 2021</h5>
+        <p>Los Angeles, California - June 25, 2021</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <%all_star_id = Event.all.find_by(name:"MLB All-Star Game").id%>
+    <a href="/events/<%=all_star_id%>">
+      <img src=<%= image_path("all_star_game.jpg") %> class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>MLB All-Star Game</h5>
+        <p>Atlanta, Georgia - July 13, 2021</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <%sxsw_id = Event.all.find_by(name:"South by Southwest").id%>
+    <a href="/events/<%=sxsw_id%>">
+      <img src=<%= image_path("sxsw.png") %> class="d-block w-100" alt="...">
+      </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>South By Southwest</h5>
+        <p>Austin, Texas - March 12, 2021</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<div id="events" class="container">
+<ul>
+    <% @events.each do |event| %>
+        <div class="tile"><%= link_to event.name, event_path(event.id) %></div><br>
+    <% end %>
+</ul>
+</div>
