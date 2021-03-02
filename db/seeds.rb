@@ -45,8 +45,8 @@ Event.create(location_id: Location.find_by(city: "Atlanta, GA").id, name: "MLB A
 # 10.times do
 #     User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, username: Faker::Esport.unique.player, password_digest: Faker::Hipster.word)
 # end
-User.create(first_name: "Marcos", last_name: "Velasco", username: "mk", password: "mk", password_confirmation: "mk")
-User.create(first_name: "Marcos", last_name: "Velasco", username: "Mark", password: "password", password_confirmation: "password")
+User.create(first_name: "Marcos", last_name: "Velasco", username: "mike", password: "password", password_confirmation: "password")
+User.create(first_name: "Marcos", last_name: "Velasco", username: "marcos123", password: "password", password_confirmation: "password")
 User.create(first_name: "Mike", last_name: "Causey", username: "Mike", password: "password", password_confirmation: "password")
 
 
