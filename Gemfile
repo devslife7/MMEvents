@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.1'
 
-gem 'psych', '< 4'
+gem 'psych', '< 4' # fixes incompatibility with ruby 3.1
 gem 'bcrypt'
 gem 'faker'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -11,7 +11,7 @@ gem 'rails', '~> 7.0', '>= 7.0.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
-gem 'puma', '~> 5.3.1'
+gem 'puma', '~> 5.6.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
